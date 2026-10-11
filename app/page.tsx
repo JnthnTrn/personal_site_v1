@@ -77,7 +77,7 @@ export default function Home() {
 
       <main>
         <section className="hero" id="top">
-          <p className="eyebrow">Observation deck · Reach orbit</p>
+          <p className="eyebrow">Observation deck</p>
           <h1>{site.name}</h1>
           <p className="role">{site.role}</p>
           <Links />
