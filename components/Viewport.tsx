@@ -14,7 +14,7 @@ function rng(seed: number) {
   };
 }
 
-// The view from orbit: stars, a ringed moon overhead, and a shaft of light falling to the planet below.
+// The view from orbit: stars and the planet below, with first light on its horizon.
 // Layers shift by different amounts with the pointer so the glass feels like it has depth.
 export default function Viewport() {
   const root = useRef<HTMLDivElement>(null);
@@ -111,22 +111,6 @@ export default function Viewport() {
   return (
     <div className="scene" ref={root} aria-hidden="true">
       <canvas className="stars" ref={canvas} />
-      <div className="beacon">
-        <div className="shaft" />
-        <svg className="rings" viewBox="-200 -200 400 400" fill="none" stroke="currentColor">
-          <circle r="74" strokeWidth="0.6" opacity="0.55" />
-          <circle r="128" strokeWidth="0.5" opacity="0.3" />
-          <circle r="172" strokeWidth="0.4" opacity="0.16" />
-          <path d="M0-196V-80M0 80V196M-196 0H-80M80 0H196" strokeWidth="0.4" opacity="0.22" />
-          <g className="rings-turn">
-            <circle r="98" strokeWidth="0.6" strokeDasharray="2 9" opacity="0.5" />
-            {Array.from({ length: 12 }, (_, i) => (
-              <path key={i} d="M0-128V-120" strokeWidth="0.8" opacity="0.5" transform={`rotate(${i * 30})`} />
-            ))}
-          </g>
-        </svg>
-        <div className="moon" />
-      </div>
       <div className="orbit">
         <div className="planet">
           <div className="land" />

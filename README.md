@@ -1,6 +1,6 @@
 # Personal site
 
-The view from an observation deck: a starfield, a ringed moon sending a shaft of light down to the planet below, and the site's content as panels on the glass.
+The view from an observation deck: a starfield, a blue planet below with first light on its horizon, and the site's content as panels on the glass.
 
 ## Run it
 
