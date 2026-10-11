@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal site
 
-## Getting Started
+The view from an observation deck over Reach: a starfield, the planet below, a Covenant fleet holding station, and the site's content as panels on the glass.
 
-First, run the development server:
+## Run it
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Make it yours
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All personal text, links and featured projects are in `lib/site.ts`; coursework is in `lib/coursework.ts`; the resume is `public/resume.pdf`. The scene is drawn in CSS and canvas (`components/Viewport.tsx`, top of `app/globals.css`); there are no image assets.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Spotify "Listening" panel
 
-## Learn More
+The panel shows "no signal" until three environment variables are set.
 
-To learn more about Next.js, take a look at the following resources:
+1. Create an app at <https://developer.spotify.com/dashboard> and add `http://127.0.0.1:8888/callback` as a redirect URI.
+2. Copy `.env.example` to `.env.local` and fill in the client id and secret.
+3. Run `npm run spotify:token`, open the printed URL, approve, and paste the printed `SPOTIFY_REFRESH_TOKEN` line into `.env.local`.
+4. Restart the dev server. When deploying, add the same three variables to the host.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Projects panel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Featured projects are the `projects` list in `lib/site.ts`. The contribution heatmap is read from GitHub's public calendar page, because there is no token-free API for it; if GitHub changes that page the heatmap hides itself.
 
-## Deploy on Vercel
+## Adding a widget
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add a `<section className="panel">` in `app/page.tsx`. Panels sit on a 12-column grid; data that needs a secret goes behind a route in `app/api/`.
