@@ -778,6 +778,24 @@ a.track:hover .track-title {
   direction: rtl; /* start scrolled to the most recent weeks on narrow screens */
 }
 
+.heat-months {
+  direction: ltr;
+  display: grid;
+  gap: 3px;
+  min-width: 620px;
+  margin-bottom: 6px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.heat-months span {
+  grid-row: 1;
+  white-space: nowrap;
+}
+
 .heat-grid {
   direction: ltr;
   display: grid;

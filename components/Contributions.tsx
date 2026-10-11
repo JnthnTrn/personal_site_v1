@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+const monthName = new Intl.DateTimeFormat("en-US", { month: "short", timeZone: "UTC" });
+
 type Calendar = {
   days: { date: string; level: number }[];
   total: number | null;
@@ -21,9 +23,27 @@ export default function Contributions() {
   if (!data) return null;
   const calendar = data;
 
+  // Week column of each day, so a month label can sit above the week that month starts in.
+  const offset = new Date(`${calendar.days[0].date}T00:00:00Z`).getUTCDay();
+  const weeks = Math.ceil((offset + calendar.days.length) / 7);
+  const months: { label: string; column: number }[] = [];
+  calendar.days.forEach((d, i) => {
+    if (!d.date.endsWith("-01")) return;
+    const column = Math.floor((offset + i) / 7) + 1;
+    // The last column has no room for a label.
+    if (column < weeks) months.push({ label: monthName.format(new Date(`${d.date}T00:00:00Z`)), column });
+  });
+
   return (
     <figure className="heat">
       <div className="heat-scroll">
+        <div className="heat-months" style={{ gridTemplateColumns: `repeat(${weeks}, 1fr)` }} aria-hidden="true">
+          {months.map((m) => (
+            <span key={m.column} style={{ gridColumnStart: m.column }}>
+              {m.label}
+            </span>
+          ))}
+        </div>
         <div
           className="heat-grid"
           role="img"
