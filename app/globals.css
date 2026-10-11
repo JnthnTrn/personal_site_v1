@@ -237,7 +237,7 @@ p {
 
 .mark {
   font-family: var(--font-display), sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: 0.2em;
   color: var(--text);
 }
@@ -344,10 +344,10 @@ main {
 h1 {
   margin: 0;
   font-family: var(--font-display), sans-serif;
-  font-weight: 400;
-  font-size: clamp(1.75rem, 5.6vw, 4.25rem);
-  line-height: 1.15;
-  letter-spacing: 0.08em;
+  font-weight: 300;
+  font-size: clamp(2.1rem, 7vw, 5rem);
+  line-height: 1.12;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-wrap: balance;
   text-shadow: 0 0 60px rgba(120, 180, 255, 0.25);
@@ -718,8 +718,9 @@ a.track:hover .track-title {
 
 .quest-name {
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(1.4rem, 3vw, 1.9rem);
-  letter-spacing: 0.08em;
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -966,8 +967,9 @@ a.track:hover .track-title {
 .hail {
   display: inline-block;
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(0.95rem, 2.6vw, 1.5rem);
-  letter-spacing: 0.04em;
+  font-size: clamp(1.05rem, 3vw, 1.75rem);
+  font-weight: 300;
+  letter-spacing: 0.05em;
   overflow-wrap: anywhere;
   transition: color 0.2s;
 }

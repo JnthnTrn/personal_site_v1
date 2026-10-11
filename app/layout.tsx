@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans, Michroma } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Saira } from "next/font/google";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = Michroma({ variable: "--font-display", weight: "400", subsets: ["latin"] });
+const display = Saira({ variable: "--font-display", weight: ["300", "400"], subsets: ["latin"] });
 const sans = IBM_Plex_Sans({ variable: "--font-sans", weight: ["400", "500"], subsets: ["latin"] });
 const mono = IBM_Plex_Mono({ variable: "--font-mono", weight: ["400", "500"], subsets: ["latin"] });
 
