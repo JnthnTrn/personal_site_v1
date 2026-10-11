@@ -28,6 +28,7 @@ export const githubUrl = `https://github.com/${site.github}`;
 export const sideQuest = {
   current: "Soccer",
   note: "Picked it up recently and learning the fundamentals.",
+  goal: "Pull off an elastico in a real game.",
   completed: [] as string[],
 };
 

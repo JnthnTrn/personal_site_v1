@@ -844,6 +844,21 @@ a.track:hover .track-title {
   color: var(--muted);
 }
 
+.panel .quest-goal {
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 1px solid var(--amber);
+}
+
+.quest-goal span {
+  display: block;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
 .quest-log {
   display: flex;
   flex-wrap: wrap;

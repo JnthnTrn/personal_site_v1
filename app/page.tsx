@@ -120,6 +120,10 @@ export default function Home() {
             <span className="status status-live">In progress</span>
             <p className="quest-name">{sideQuest.current}</p>
             <p className="quest-note">{sideQuest.note}</p>
+            <p className="quest-goal">
+              <span>Objective</span>
+              {sideQuest.goal}
+            </p>
             {sideQuest.completed.length > 0 && (
               <ul className="quest-log">
                 {sideQuest.completed.map((q) => (
