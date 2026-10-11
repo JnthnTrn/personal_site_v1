@@ -2,17 +2,17 @@
 export const site = {
   name: "Jonathan Tran",
   initials: "JT",
-  role: "Data Science & Computer Science at UC Berkeley",
+  role: "Computer Science & Data Science at UC Berkeley",
   tagline: "I build machine-learning and full-stack systems, and I like knowing what's happening underneath them.",
   about: [
-    "I'm studying Data Science and Computer Science at UC Berkeley. Right now I'm an ML engineering intern at iPick.AI, building an LLM-powered portfolio tool and a reinforcement-learning loop that re-ranks picks across 5,000+ stocks from weekly performance.",
+    "I'm studying Computer Science and Data Science at UC Berkeley. Right now I'm an ML engineering intern at iPick.AI, building an LLM-powered portfolio tool and a reinforcement-learning loop that re-ranks picks across 5,000+ stocks from weekly performance.",
     "Before that I extended an ETL pipeline at ManuFlow so it could take schema changes on the fly, and built a combinatorial alarm-configuration system at Hatch for an app with more than four million users.",
     "Off the clock I'm at the gym, on a volleyball court, or dilly-dallying with friends. I watch a lot of movies, sci-fi above everything else, and there's always music on.",
     "I love learning history, which is most of why I travel: I'd rather stand where it happened than only read about it.",
   ],
   facts: [
     { label: "Based in", value: "San Francisco, CA" },
-    { label: "Studying", value: "Data Science & Computer Science" },
+    { label: "Studying", value: "Computer Science & Data Science" },
     { label: "Currently", value: "ML Engineering Intern, iPick.AI" },
   ],
   location: { label: "San Francisco, CA", coords: "37.77°N 122.42°W", timeZone: "America/Los_Angeles" },
