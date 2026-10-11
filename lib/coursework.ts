@@ -28,6 +28,7 @@ export const coursework = [
   {
     term: "Fall 2025",
     courses: [
+      ["CS 170", "Efficient Algorithms and Intractable Problems"],
       ["DATA 144", "Data Mining and Analytics"],
       ["INDENG 142A", "Introduction to Machine Learning and Data Analytics"],
       ["UGBA 135", "Personal Financial Management"],
