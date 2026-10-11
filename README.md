@@ -15,11 +15,11 @@ All personal text, links and featured projects are in `lib/site.ts`; coursework 
 
 ## Spotify "Listening" panel
 
-The panel shows "no signal" until three environment variables are set.
+The panel shows what is playing now (or the last track played), your most played artist, and the three tracks you have played most this month. It shows "no signal" until three environment variables are set.
 
 1. Create an app at <https://developer.spotify.com/dashboard> and add `http://127.0.0.1:8888/callback` as a redirect URI.
 2. Copy `.env.example` to `.env.local` and fill in the client id and secret.
-3. Run `npm run spotify:token`, open the printed URL, approve, and paste the printed `SPOTIFY_REFRESH_TOKEN` line into `.env.local`.
+3. Run `npm run spotify:token`, open the printed URL and approve. The script saves `SPOTIFY_REFRESH_TOKEN` into `.env.local` for you.
 4. Restart the dev server. When deploying, add the same three variables to the host.
 
 ## Projects panel

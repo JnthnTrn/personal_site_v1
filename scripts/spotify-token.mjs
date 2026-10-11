@@ -1,5 +1,6 @@
-// One-time helper: prints the SPOTIFY_REFRESH_TOKEN for .env.local.
+// One-time helper: signs in to Spotify and saves SPOTIFY_REFRESH_TOKEN to .env.local.
 // Run with `npm run spotify:token` after setting the client id and secret.
+import fs from "node:fs";
 import http from "node:http";
 
 const { SPOTIFY_CLIENT_ID: id, SPOTIFY_CLIENT_SECRET: secret } = process.env;
@@ -9,7 +10,7 @@ if (!id || !secret) {
 }
 
 const redirect = "http://127.0.0.1:8888/callback";
-const scope = "user-read-currently-playing user-read-recently-played";
+const scope = "user-read-currently-playing user-read-recently-played user-top-read";
 const authorize = `https://accounts.spotify.com/authorize?${new URLSearchParams({
   client_id: id,
   response_type: "code",
@@ -33,8 +34,14 @@ const server = http.createServer(async (req, res) => {
     console.error("Spotify did not return a refresh token:", data);
     res.end("Failed. Check the terminal.");
   } else {
-    console.log(`\nAdd this line to .env.local:\n\nSPOTIFY_REFRESH_TOKEN=${data.refresh_token}\n`);
-    res.end("Done. You can close this tab and go back to the terminal.");
+    const line = `SPOTIFY_REFRESH_TOKEN=${data.refresh_token}`;
+    const env = fs.readFileSync(".env.local", "utf8");
+    fs.writeFileSync(
+      ".env.local",
+      /^SPOTIFY_REFRESH_TOKEN=.*$/m.test(env) ? env.replace(/^SPOTIFY_REFRESH_TOKEN=.*$/m, line) : `${env.trimEnd()}\n${line}\n`,
+    );
+    console.log("\nSaved the refresh token to .env.local. Restart the dev server to pick it up.\n");
+    res.end("Linked. You can close this tab.");
   }
   server.close();
 });
