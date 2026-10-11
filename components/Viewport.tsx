@@ -115,6 +115,9 @@ export default function Viewport() {
         <div className="planet">
           <div className="land" />
           <div className="clouds" />
+          <div className="night">
+            <div className="embers" />
+          </div>
         </div>
       </div>
       <div className="glass" />
