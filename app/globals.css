@@ -681,6 +681,78 @@ a.track:hover .track-title {
   }
 }
 
+.favorites {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.favorites h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.artist {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.artist img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.favorites ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: rank;
+}
+
+.favorites li a {
+  display: block;
+  padding: 5px 0 5px 26px;
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favorites li a::before {
+  counter-increment: rank;
+  content: "0" counter(rank);
+  position: absolute;
+  left: 0;
+  top: 7px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+.favorites li span {
+  margin-left: 8px;
+  color: var(--muted);
+}
+
+.favorites a:hover {
+  color: var(--ice);
+}
+
 .panel .footnote {
   margin-top: auto;
   padding-top: 22px;

@@ -110,7 +110,7 @@ export default function Home() {
               <span>02</span> Listening
             </h2>
             <NowPlaying />
-            <p className="footnote">Live from Spotify, refreshed every 30 seconds.</p>
+            <p className="footnote">Live from Spotify.</p>
           </section>
 
           <section className="panel panel-quest" id="quest" aria-labelledby="quest-title">
