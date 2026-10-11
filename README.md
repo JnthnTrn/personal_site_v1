@@ -1,6 +1,6 @@
 # Personal site
 
-The view from an observation deck over Reach: a starfield, the planet below, a Covenant fleet holding station, and the site's content as panels on the glass.
+The view from an observation deck over Reach: a starfield, the planet below, and the site's content as panels on the glass.
 
 ## Run it
 
