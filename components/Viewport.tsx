@@ -14,7 +14,7 @@ function rng(seed: number) {
   };
 }
 
-// The view from orbit: stars and the planet below, with first light on its horizon.
+// The view out of the window: stars and the planet below.
 // Layers shift by different amounts with the pointer so the glass feels like it has depth.
 export default function Viewport() {
   const root = useRef<HTMLDivElement>(null);
@@ -113,10 +113,8 @@ export default function Viewport() {
       <canvas className="stars" ref={canvas} />
       <div className="orbit">
         <div className="planet">
-          <div className="land" />
           <div className="clouds" />
         </div>
-        <div className="dawn" />
       </div>
       <div className="glass" />
       <div className="dim" />
